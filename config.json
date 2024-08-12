@@ -2,7 +2,7 @@
     "language": "en",
     "keyActive": "",
     "DeveloperMode": false,
-    "autoCreateDB": true,
+    "autoCreateDB": false,
     "allowInbox": true,
     "autoClean": false,
     "adminOnly": false,
