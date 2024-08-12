@@ -18,7 +18,7 @@ module.exports.run = async function ({ api, event, Users, Currencies }) {
   const data = await Currencies.getData(event.senderID);
   const money = data.money;
 
-  if (money < 2000) {
+  if (money < -1) {
     return api.sendMessage(`ماعندك مهر امشي اعمل وتعال `, event.threadID, event.messageID);
   }
 
