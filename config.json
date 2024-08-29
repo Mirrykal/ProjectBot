@@ -1,1 +1,239 @@
 
+{
+    "language": "en",
+    "keyActive": "",
+    "DeveloperMode": false,
+    "autoCreateDB": true,
+    "allowInbox": true,
+    "autoClean": false,
+    "adminOnly": false,
+    "keyAdminOnly": "",
+    "commandDisabled": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "eventDisabled": [],
+    "EMAIL": "",
+    "PASSWORD": "",
+    "OTPKEY": "",
+    "BOTNAME": "»»—>𝐉𝐀𝐍𝐔<—««",
+    "PREFIX": "$",
+    "OTHERBOT": [
+        "100085615149294"
+    ],
+    "UNSENTVIP": [
+        "100085615149294",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "GOD": [
+        "100085615149294",
+        "",
+        ""
+    ],
+    "ADMINBOT": [
+        "100085615149294",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "OWNER": "ℙ𝕒𝕘𝕒𝕝 𝕔𝕙𝕠𝕣𝕒",
+    "AGE": "21",
+    "GENDER": "𝗠𝗮𝗟𝗲",
+    "FACEBOOK": "https://https://www.facebook.com/pagalchora143?mibextid=ZbWKwL?id=100038374310301",
+    "AutoOffBot": "disable",
+    "AutoOffBotStartSleep": "disable",
+    "AutoOffBotSendMessage": "Bye everyone. i need to sleep i'll be right back at 5:00AM 🥰",
+    "AutoOffBotEndSleep": "disable",
+    "AutoGreet": "disable",
+    "AutoGreetWithSticker": "enable",
+    "AutoGreetSendPerHour": "1",
+    "AutoPost": "disable",
+    "AutoPostText": "༻𝐎𝐖𝐍𝐄𝐑:- ☞ℙ𝕒𝕘𝕒𝕝 𝕔𝕙𝕠𝕣𝕒☜ ༺                                                 ༒𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠ℙurv〠.༒                                   ༒𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝༒:- ☞ https://www.facebook.com/pagalchora143?mibextid=ZbWKwL?id=100038374310301☜                                              ֎𝘍𝘰𝘳 𝘈𝘯𝘺 𝘒𝘪𝘯𝘥 𝘖𝘧 𝘏𝘦𝘭𝘱 :- https://t.me/Pagalchora001☜",
+    "AutoPostPerHour": "1",
+    "AutoPostGreet": "disable",
+    "AutoPostGreetPostPerHour": "6",
+    "AutoPostChristmasCountdown": "disable",
+    "HolidayAutoGreet": "disable",
+    "ChristmasCountdown": "disable",
+    "AcceptFriendRequest": "accept",
+    "AutoPendingGroupChat": "accept",
+    "AutoBioStatus": "enable",
+    "AutoBioStatusSetPerHour": "1",
+    "BioStatus": "༻𝐎𝐖𝐍𝐄𝐑:- ☞ℙ𝕒𝕘𝕒𝕝 𝕔𝕙𝕠𝕣𝕒☜ ༺                                                  ༒𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠ℙurv〠.༒                                    ༒𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝༒:- ☞ https://www.facebook.com/pagalchora143?mibextid=ZbWKwL?id=100038374310301☜                                              ֎𝘍𝘰𝘳 𝘈𝘯𝘺 𝘒𝘪𝘯𝘥 𝘖𝘧 𝘏𝘦𝘭𝘱 :- https://t.me/Pagalchora001☜",
+    "AutoLeave": "enable",
+    "RandomRedditMemes": "enable",
+    "RandomRedditMemesSendPerHour": "1",
+    "Randombibleverse": "disable",
+    "Uptimelogs": true,
+    "DATABASE": {
+        "sqlite": {
+            "storage": "data.sqlite"
+        }
+    },
+    "APPSTATEPATH": "appstate.json",
+    "FCAOption": {
+        "forceLogin": true,
+        "listenEvents": true,
+        "pauseLog": true,
+        "logLevel": "error",
+        "selfListen": false,
+        "userAgent": "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 OPR/84.0.4316.21"
+    },
+    "version": "30.0.0",
+    "help": {
+        "autoUnsend": "",
+        "delayUnsend": 60
+    },
+    "adminUpdate": {
+        "autoUnsend": true,
+        "sendNoti": true,
+        "timeToUnsend": 10
+    },
+    "log": {
+        "enable": true
+    },
+    "rankup": {
+        "autoUnsend": "",
+        "unsendMessageAfter": 5
+    },
+    "work": {
+        "cooldownTime": 1200000
+    },
+    "youtube-video": {
+        "YOUTUBE_API": "AIzaSyAV1Ob0n_87tZSmCMorTGE-jHVrAvnXcIM"
+    },
+    "linkword": {
+        "APIKEY": ""
+    },
+    "ytb-video": {
+        "YOUTUBE_API": "AIzaSyAV1Ob0n_87tZSmCMorTGE-jHVrAvnXcIM"
+    },
+    "math": {
+        "WOLFRAM": "T8J8YV-H265UQ762K"
+    },
+    "luật bot": {
+        "autoUnsend": true,
+        "delayUnsend": 30
+    },
+    "lbot": {
+        "autoUnsend": true,
+        "delayUnsend": 30
+    },
+    "work-beta": {
+        "cooldownTime": 1200000
+    },
+    "job-beta": {
+        "cooldownTime": 5000
+    },
+    "job": {
+        "cooldownTime": 5000
+    },
+    "sauce": {
+        "SAUCENAO_API": "a2430f4a078a4782540142bfad2551f3384bd20f"
+    },
+    "weather": {
+        "OPEN_WEATHER": "b7f1db5959a1f5b2a079912b03f0cd96"
+    },
+    "simsimi": {
+        "APIKEY": "Meew_Ov8SwxqVjUMUJafvxWAsdeac7YAUnr"
+    },
+    "sim": {
+        "APIKEY": "Meew_Ov8SwxqVjUMUJafvxWAsdeac7YAUnr"
+    },
+    "slap": {
+        "APIKEY": "Meew_Ov8SwxqVjUMUJafvxWAsdeac7YAUnr"
+    },
+    "daily": {
+        "cooldownTime": 43200000,
+        "rewardCoin": 19310000
+    },
+    "manslap": {
+        "APIKEY": "Meew_Ov8SwxqVjUMUJafvxWAsdeac7YAUnr"
+    },
+    "play": {
+        "YOUTUBE_API": "18a322322amsh480550653b0f489p119066jsnaaeeeb9f7a54",
+        "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
+    },
+    "video": {
+        "YOUTUBE_API": "AIzaSyBtiD442srhczDpcg8xbhinP423BeUFXB8"
+    },
+    "testcovid": {
+        "APIKEY": "Meew_kB5wRAlpHhrAj0GhRzmmLHesvvTbXE"
+    },
+    "fish": {
+        "cooldownTime": 1000000
+    },
+    "simv2": {
+        "APIKEY": "mzkVip_Simsimi"
+    },
+    "cave": {
+        "cooldownTime": 1000000
+    },
+    "simvoice": {
+        "APIKEY": "Meew_hTrAe8Ipec8EsSRsQXoMO7v0XaPgY0"
+    },
+    "sing": {
+        "YOUTUBE_API": "AIzaSyBtiD442srhczDpcg8xbhinP423BeUFXB8",
+        "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
+    },
+    "slapv2": {
+        "APIKEY": ""
+    },
+    "videov2": {
+        "YOUTUBE_API": "AIzaSyDEE1-zZSRVI8lTaQOVsIAQFgL-_BJKvhk"
+    },
+    "help2": {
+        "autoUnsend": true,
+        "delayUnsend": 300
+    },
+    "god": {
+        "enable": true
+    },
+    "bannerbw": {
+        "APIKEY": "ntkhang"
+    },
+    "messageforrealcreator": {
+        "enable": true
+    },
+    "janu": {
+        "APIKEY": ""
+    },
+    "video2": {
+        "YOUTUBE_API": "AIzaSyDBOpnGGz225cPwHlJQs8OMRtxOjSUm73I"
+    },
+    "earn": {
+        "cooldownTime": 43200000
+    },
+    "video3": {
+        "YOUTUBE_API": "AIzaSyDC-PYP4E1bD2_RauVJBnTSkvUNxkxSQcc"
+    },
+    "surprise": {
+        "log": true,
+        "out": "",
+        "kickAll": "",
+        "delThread": ""
+    },
+    "sortword": {
+        "APIKEY": "Meew_kB5wRAlpHhrAj0GhRzmmLHesvvTbXE"
+    }
+}
