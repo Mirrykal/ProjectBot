@@ -1,12 +1,12 @@
 module.exports.config = {
-    name: "pair3",
-    version: "3.1.1",
+    name: "purpose",
+    version: "7.3.1",
     hasPermssion: 0,
-    credits: "MR CHAND",
-    description: "Hug 🥰",
+    credits: " Chand",///don't change my Credit Coz i Edit 
+    description: "Get Pair From Mention",
     commandCategory: "img",
     usages: "[@mention]",
-    cooldowns: 5,
+    cooldowns: 5, 
     dependencies: {
         "axios": "",
         "fs-extra": "",
@@ -20,9 +20,9 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/cache/canvas/`;
-    const path = resolve(__dirname, 'cache/canvas', 'pair3.png');
+    const path = resolve(__dirname, 'cache/canvas', 'lovep.png');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.imgur.com/tWuWCF6.jpg", path);
+    if (!existsSync(path)) await downloadFile("https://i.imgur.com/VKvcNUA.jpg", path); 
 }
 
 async function makeImage({ one, two }) {
@@ -32,7 +32,7 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache", "canvas");
 
-    let batgiam_img = await jimp.read(__root + "/pair3.png");
+    let batgiam_img = await jimp.read(__root + "/lovep.png");
     let pathImg = __root + `/batman${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
@@ -45,7 +45,7 @@ async function makeImage({ one, two }) {
     
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    batgiam_img.composite(circleOne.resize(200, 200), 100,100).composite(circleTwo.resize(200, 200), 430, 100);
+    batgiam_img.composite(circleOne.resize(200, 200), 60, 180).composite(circleTwo.resize(200, 200), 610, 180);
     
     let raw = await batgiam_img.getBufferAsync("image/png");
     
