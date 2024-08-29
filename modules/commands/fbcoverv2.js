@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "fbcoverv2",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "HieuHapHoi",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "banner",
 	commandCategory: "Image",
 	usages: "",

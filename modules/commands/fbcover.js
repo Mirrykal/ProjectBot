@@ -1,197 +1,183 @@
 module.exports.config = {
-name: "fbcover",
-version: "1.0.0",
-hasPermssion: 0,
-credits: "MiRrykal",
-description: "Create a facebook cover photo",
-commandCategory: "game",
-cooldowns: 0,
-dependencies: {
-    "fs-extra": "",
-    "request": "",
-    "axios": ""
- }
+  name: "fbcover",
+  version: "1.0.9",
+  hasPermssion: 0,
+  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+  description: "generate a custom facebook cover.",
+  commandCategory: "generate-image",
+  cooldowns: 0,
+  usage: "<blank>",
+  dependencies: {
+      "fs-extra": "",
+      "request": "",
+      "axios": ""
+  }
 };
-module.exports.run = async function ({ api, args, event, permssion }) {
-    const request = require('request');
-  const fs = require("fs-extra")
-  const axios = require("axios")
-  const { threadID, messageID, senderID, body } = event;
-  if(!args[0]) return api.sendMessage('Please enter the main name!!!', threadID, messageID)
-  else return api.sendMessage(`馃攳 You chose the main name: ${args.join(" ").toUpperCase()}\n\n(Reply to this message and choose your secondary name)`,event.threadID, (err, info) => {
+
+module.exports.run = async function ({ api, args, event, permssion , handleReply}) {
+const request = require('request');
+const fs = require("fs-extra")
+const axios = require("axios")
+const { threadID, messageID, senderID, body } = event;
+  if (this.config.credits != '\u0063\u0068\u0069\u006e\u0068\u006c\u0065 \u0026 \u0052\u0065\u002d\u004d\u0061\u0064\u0065 \u0062\u0079 \u0053\u0061\u0069\u006b\u0069\u0044\u0065\u0073\u0075') {
+        console.log(`\x1b[33m[ \u0057\u0041\u0052\u004e ]\x1b[37m » \u0043\u0068\u0061\u006e\u0067\u0065 \u0063\u0072\u0065\u0064\u0069\u0074\u0073 \u006d\u006f \u0070\u0061 \u0068\u0061\u002c \u006d\u0061\u0074\u0075\u0074\u006f \u006b\u0061 \u006d\u0061\u0067\u0063\u006f\u0064\u0065 \u006e\u0067 \u0073\u0061\u0072\u0069\u006c\u0069 \u006d\u006f \u0075\u006c\u006f\u006c \u0070\u0061\u006b\u0079\u0075\u0021`);
+        return api.sendMessage('\u005b \u0057\u0041\u0052\u004e \u005d \u0044\u0065\u0074\u0065\u0063\u0074 \u0062\u006f\u0074 \u006f\u0070\u0065\u0072\u0061\u0074\u006f\u0072 ' + global.config.BOTNAME + ' \u0063\u0068\u0061\u006e\u0067\u0065 \u0063\u0072\u0065\u0064\u0069\u0074\u0073 \u006d\u006f\u0064\u0075\u006c\u0065\u0073  "' + this.config.name + '"', threadID, messageID);
+  }
+  else if (!args[0]){
+    api.sendMessage(`\u0059\u006f\u0075 \u0077\u0061\u006e\u0074 \u0074\u006f \u0063\u006f\u006e\u0074\u0069\u006e\u0075\u0065\u003f \u0050\u006c\u0065\u0061\u0073\u0065 \u0072\u0065\u0070\u006c\u0079 \u0069\u0066 \u0079\u006f\u0075 \u0077\u0061\u006e\u0074 \u0061\u006e\u0064 \u0069\u0067\u006e\u006f\u0072\u0065 \u0074\u0068\u0069\u0073 \u0069\u0066 \u0079\u006f\u0075 \u0064\u006f\u006e\u0027\u0074\u002e`,event.threadID, (err, info) => {
+    
      return global.client.handleReply.push({
-        type: "tenphu",
-        name: `fbcover`,
+        type: "characters",
+        name: this.config.name,
         author: senderID,
         tenchinh: args.join(" ").toUpperCase(),
         messageID: info.messageID
       });
   },event.messageID);
 }
+}
+
 module.exports.handleReply = async function({ api, event, args, handleReply, client, __GLOBAL, Threads, Users, Currencies }) {
-  module.exports.circle = async (image) => {
-    const jimp = require("jimp")
-    image = await jimp.read(image);
-    image.circle();
-    return await image.getBufferAsync("image/png");
-  }
-  if (handleReply.author != event.senderID) return;
-  const { threadID, messageID, senderID, body } = event;
-  const { loadImage, createCanvas } = require("canvas");
-  const request = require('request');
-  const fs = require("fs-extra")
-  const axios = require("axios")
-  let pathImg = __dirname + `/cache/${senderID+20}.png`;
-  let pathAva = __dirname + `/cache/${senderID+30}.png`;
-  let pathLine = __dirname + `/cache/${senderID+40}.png`;
-  const path = require("path")
-  const Canvas = require("canvas")
-  const __root = path.resolve(__dirname, "cache");
-  var tenchinh = handleReply.tenchinh;
-  //=================CONFIG TEXT=============//
-  switch (handleReply.type) {
-    case "tenphu": {
-      var tenchinh = handleReply.tenchinh;
-      api.unsendMessage(handleReply.messageID);
-      return api.sendMessage(`馃攳 You have chosen a sub-name ${event.body.toUpperCase()}\n\n(Reply to this message enter your phone number)`,threadID, function (err, info) {
-        return global.client.handleReply.push({
-          type: "sdt",
-          name: `fbcover`,
-          author: senderID,
-          tenphu: event.body,
-          tenchinh: tenchinh,
-          messageID: info.messageID
-        });
-      },messageID)
+    const axios = require("axios");
+    const fs = require("fs-extra");
+    const request = require("request");
+    var info = await api.getUserInfo(event.senderID);
+    var nameSender = info[event.senderID].name;
+    var arraytag = [];
+        arraytag.push({id: event.senderID, tag: nameSender});
+    if (handleReply.author != event.senderID) return;
+    const {
+        threadID,
+        messageID,
+        senderID
+    } = event;
+
+    switch (handleReply.type) {
+             case "characters": { 
+        	api.unsendMessage(handleReply.messageID);
+        	return api.sendMessage(`Reply to this message enter your primary name`,threadID , function (err, info) { 
+        	  return global.client.handleReply.push({ 
+        	  	type: 'subname',
+        	  	name: 'fbcover',
+        	  	author: senderID,
+        	  	characters: event.body,
+        	  	messageID: info.messageID
+        	  })
+        	}, messageID);
+        } 
+        
+  
+        case "subname": { 
+        	api.unsendMessage(handleReply.messageID);
+        	return api.sendMessage(`You choose ${event.body} as your main name\n(Reply to this message enter your secondary name)`,threadID , function (err, info) { 
+        		return global.client.handleReply.push({ 
+        			type: 'number',
+        			name: 'fbcover',
+        			author: senderID,
+                    characters: handleReply.characters,
+        			name_s: event.body,
+        			messageID: info.messageID
+        		})
+        	}, messageID);
+        }
+
+        case "number": { 
+        	api.unsendMessage(handleReply.messageID);
+        	return api.sendMessage(`You have selected "${event.body}" as your secondary name\n(Reply to this message with your phone number)`,threadID , function (err, info) { 
+        	  return global.client.handleReply.push({ 
+        	  	type: 'address',
+        	  	name: 'fbcover',
+        	  	author: senderID,
+        	  	        	  	 
+             characters: handleReply.characters,
+           subname: event.body,
+              
+        			name_s: handleReply.name_s,
+        			
+        	  	messageID: info.messageID
+        	  })
+        	}, messageID);
+        }
+
+        case "address": { 
+
+
+api.unsendMessage(handleReply.messageID);
+        	return api.sendMessage(`You have selected "${event.body}" as your phone number\n(Reply to this message with your adrress)`,threadID , function (err, info) { 
+        	  return global.client.handleReply.push({ 
+        	  	type: 'email',
+        	  	name: 'fbcover',
+        	  	author: senderID,
+                      	  	 
+            characters: handleReply.characters,
+           subname: handleReply.subname,
+              
+              number: event.body,
+              
+        			name_s: handleReply.name_s,
+              
+        	  	messageID: info.messageID
+        	  })
+        	}, messageID);
     }
-    case "sdt": {
-      api.unsendMessage(handleReply.messageID);
-      return api.sendMessage(`馃攳 You have selected SDT as : ${event.body.toUpperCase()}\n\(Reply to this message to enter your email)`,threadID, function (err, info) {
-        return global.client.handleReply.push({
-          type: "email",
-          name: `fbcover`,
-          author: senderID,
-          sdt: event.body,
-          tenchinh: handleReply.tenchinh,
-          tenphu: handleReply.tenphu,
-          messageID: info.messageID
-        });
-      },messageID) 
-    }
-    case "email": {
-      api.unsendMessage(handleReply.messageID);
-      return api.sendMessage(`馃攳 You have selected email as : ${event.body.toUpperCase()}\n\(Reply to this message to enter your address)`,threadID, function (err, info) {
-        return global.client.handleReply.push({
-          type: "color",
-          name: `fbcover`,
-          author: senderID,
-          sdt: handleReply.sdt,
-          tenchinh: handleReply.tenchinh,
-          tenphu: handleReply.tenphu,
-          email: event.body,
-          messageID: info.messageID
-        });
-      },messageID) 
-    }
-    case "color": {
-      api.unsendMessage(handleReply.messageID);
-      return api.sendMessage(`馃攳 You have chosen the address as : ${event.body.toUpperCase()}\nReply to this message to enter your background color (enter no as the default color)`,threadID, function (err, info) {
-        return global.client.handleReply.push({
-          type: "create",
-          name: `fbcover`,
-          author: senderID,
-          sdt: handleReply.sdt,
-          tenchinh: handleReply.tenchinh,
-          tenphu: handleReply.tenphu,
-          diachi: event.body,
-          email: handleReply.email,
-          messageID: info.messageID
-        });
-      },messageID) 
-    }
-    case "create": {
-      var color = event.body
-      if (color.toLowerCase() == "no") var color = `#ffffff`
-      var address = handleReply.diachi.toUpperCase()
-      var name = handleReply.tenchinh.toUpperCase()
-      var email = handleReply.email.toUpperCase()
-      var subname = handleReply.tenphu.toUpperCase()
-      var phoneNumber = handleReply.sdt.toUpperCase()
-      api.unsendMessage(handleReply.messageID);
-      api.sendMessage(`鈴� Initializing the image maker...`,threadID, (err, info) => {
-      setTimeout(() => {
-              api.unsendMessage(info.messageID);
-     }, 1000);
+
+
+        case "email": { 
+        	api.unsendMessage(handleReply.messageID);
+        	return api.sendMessage(`You have selected character "${event.body}" as an address. \n(Reply to this message your email address)`,threadID , function (err, info) { 
+        	  return global.client.handleReply.push({ 
+        	  	type: 'color',
+        	  	name: 'fbcover',
+        	  	author: senderID,
+        	  	characters: handleReply.characters,
+           subname: handleReply.subname,
+              
+              number: handleReply.number,
+              address: event.body,
+        			name_s: handleReply.name_s,
+        	  	messageID: info.messageID
+        	  })
+        	}, messageID);
+        }
+        
+        case "color": { 
+        	api.unsendMessage(handleReply.messageID);
+        	return api.sendMessage(`You have chosen "${event.body}" as your email address.\nEnter\nEnter your background color (note: enter the English name of the color - If you don't want to enter the color then enter "no")\n(Reply this message)`,threadID , function (err, info) {
+        		return global.client.handleReply.push({ 
+        			type: 'create',
+        			name: 'fbcover',
+        			author: senderID,
+        			characters: handleReply.characters,
+           subname: handleReply.subname,
+              
+              number: handleReply.number,
+              address: handleReply.address,
+           email: event.body,
+
+        			name_s: handleReply.name_s,
+        			messageID: info.messageID
+        		})
+        	}, messageID)
+        }
+        case "create": {
+            var char = handleReply.characters;
+            var name = handleReply.name_s;
+          var subname = handleReply.subname;
+          var number = handleReply.number;
+            
+          
+          var address = handleReply.address;
+          var email = handleReply.email;
+          var uid = event.senderID;
+          var color = event.body;
+            api.unsendMessage(handleReply.messageID);
+            api.sendMessage(`Initializing...`,threadID, (err, info) => {
+            setTimeout(() => {
+            	api.unsendMessage(info.messageID);
+            	var callback = () => api.sendMessage({body:`Sender Name: ${nameSender}\nName: ${name}\nSub Name: ${subname}\nID: ${uid}\nColor: ${color}\nAddress: ${address}\nEmail: ${email}\nNumber: ${number}`,mentions: arraytag,attachment: fs.createReadStream(__dirname + "/cache/fbcover.png")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/fbcover.png"),event.messageID);
+                return request(encodeURI(`https://api.phamvandien.xyz/fbcover/v1?name=${name}&uid=${uid}&address=${address}&email=${email}&subname=${subname}&sdt=${number}&color=${color}&apikey=KeyTest`)).pipe(fs.createWriteStream(__dirname + '/cache/fbcover.png')).on('close', () => callback());
+            }, 1000);
           }, messageID);
-      //=================CONFIG IMG=============//
-      let avtAnime = (
-        await axios.get(encodeURI(
-          `https://graph.facebook.com/${senderID}/picture?height=1500&width=1500&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`),
-          { responseType: "arraybuffer" }
-        )
-      ).data;
-      let background = (
-        await axios.get(encodeURI(`https://1.bp.blogspot.com/-ZyXHJE2S3ew/YSdA8Guah-I/AAAAAAAAwtQ/udZEj3sXhQkwh5Qn8jwfjRwesrGoY90cwCNcBGAsYHQ/s0/bg.jpg`), {
-          responseType: "arraybuffer",
-        })
-      ).data;
-      let hieuung = (
-        await axios.get(encodeURI(`https://1.bp.blogspot.com/-zl3qntcfDhY/YSdEQNehJJI/AAAAAAAAwtY/C17yMRMBjGstL_Cq6STfSYyBy-mwjkdQwCNcBGAsYHQ/s0/mask.png`), {
-          responseType: "arraybuffer",
-        })
-      ).data;
-      fs.writeFileSync(pathAva, Buffer.from(avtAnime, "utf-8"));
-      fs.writeFileSync(pathImg, Buffer.from(background, "utf-8"));
-      fs.writeFileSync(pathLine, Buffer.from(hieuung, "utf-8"));
-      var avatar = await this.circle(pathAva);
-      //=================DOWNLOAD FONTS=============//
-      if(!fs.existsSync(__dirname+`/cache/UTMAvoBold.ttf`)) { 
-          let getfont2 = (await axios.get(`https://drive.google.com/u/0/uc?id=1DuI-ou9OGEkII7n8odx-A7NIcYz0Xk9o&export=download`, { responseType: "arraybuffer" })).data;
-           fs.writeFileSync(__dirname+`/cache/UTMAvoBold.ttf`, Buffer.from(getfont2, "utf-8"));
-        };
-      //=================DRAW BANNER=============//
-      let baseImage = await loadImage(pathImg);
-      let baseAva = await loadImage(avatar);
-      let baseLine = await loadImage(pathLine);
-      let canvas = createCanvas(baseImage.width, baseImage.height);
-      let ctx = canvas.getContext("2d");
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
-      Canvas.registerFont(__dirname+`/cache/UTMAvoBold.ttf`, { family: "UTMAvoBold" });
-      ctx.strokeStyle = "rgba(255,255,255, 0.2)";
-      ctx.lineWidth = 3;
-      ctx.font = "100px UTMAvoBold";
-      ctx.strokeText(name, 60, 130);
-      ctx.strokeText(name, 60, 130);
-      ctx.textAlign = "right";
-      ctx.strokeText(name, canvas.width - 30, canvas.height - 30);
-      ctx.strokeText(name, canvas.width - 130, canvas.height - 130);
-      ctx.fillStyle = `#ffffff`
-      ctx.font = "55px UTMAvoBold";
-      ctx.fillText(name, 680, 270);
-      ctx.font = "40px UTMAvoBold";
-      ctx.fillStyle = "#fff";
-      ctx.textAlign = "right";
-      ctx.fillText(subname, 680, 320);
-      ctx.font = "23px UTMAvoBold";
-      ctx.fillStyle = "#fff";
-      ctx.textAlign = "start";
-      ctx.fillText(phoneNumber, 1350, 252);
-      ctx.fillText(email, 1350, 332);
-      ctx.fillText(address, 1350, 410);
-      ctx.globalCompositeOperation = "destination-out";
-      ctx.drawImage(baseLine, 0, 0, canvas.width, canvas.height);
-      ctx.globalCompositeOperation = "destination-over";
-      ctx.fillStyle = color
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.globalCompositeOperation = "source-over";
-      ctx.drawImage(baseAva, 824, 180, 285, 285);
-      const imageBuffer = canvas.toBuffer();
-      fs.writeFileSync(pathImg, imageBuffer);
-      return api.sendMessage(
-        { attachment: fs.createReadStream(pathImg) },
-        threadID,messageID
-      );
+        }
     }
-  }
 }

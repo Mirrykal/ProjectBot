@@ -2,9 +2,9 @@
     name: "couple",
     version: "2.0.0",
     hasPermssion: 0,
-    credits: "Thiệu Trung Kiên",
+    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
     description: "Seo phi",
-    commandCategory: "Tình Yêu",
+    commandCategory: "Love",
     usages: "[tag]",
     cooldowns: 5,
     dependencies: {
@@ -70,7 +70,7 @@ module.exports.run = async function ({ event, api, args }) {
     if (!mention) return api.sendMessage("Vui lòng tag 1 người", threadID, messageID);
     else {
         var one = senderID, two = mention;
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "অনেক সুন্দর জুটি 💏 ",
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "Ship ",
             mentions: [{
           tag: tag,
           id: mention

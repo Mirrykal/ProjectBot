@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "board",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "mewmew mod by hinata",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "Comment on the board ( ͡° ͜ʖ ͡°)",
 	commandCategory: "general",
 	usages: "bang [text]",

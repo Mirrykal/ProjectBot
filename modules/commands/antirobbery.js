@@ -1,11 +1,11 @@
 module.exports.config = {
  name: "antirobbery",
  version: "1.0.0",
- credits: "D-Jukie",
+ credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
  hasPermssion: 1,
  description: "Prevent changing group administrators",
  usages: "",
- commandCategory: "Group",
+ commandCategory: "Box Chat",
  cooldowns: 0
 };
 
