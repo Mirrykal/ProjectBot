@@ -4,7 +4,7 @@
     "DeveloperMode": false,
     "autoCreateDB": false,
     "allowInbox": true,
-    "autoClean": false,
+    "autoClean": true,
     "adminOnly": false,
     "keyAdminOnly": "",
     "commandDisabled": [
