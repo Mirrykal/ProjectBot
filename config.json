@@ -5,7 +5,7 @@
     "autoCreateDB": false,
     "allowInbox": true,
     "autoClean": true,
-    "adminOnly": false,
+    "adminOnly": true,
     "keyAdminOnly": "",
     "commandDisabled": [
         "",
